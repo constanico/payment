@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity
 
 interface PaymentService {
     fun getPayment(): TransactionList
-    fun postPayment(): ResponseEntity<Transaction>
+    fun postPayment(transaction: Transaction): Transaction
 }
