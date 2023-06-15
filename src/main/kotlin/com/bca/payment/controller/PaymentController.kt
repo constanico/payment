@@ -28,8 +28,8 @@ class PaymentController(private val paymentService: PaymentService) {
 
     @CrossOrigin
     @PostMapping("/sale")
-    fun postPaymentSale(@RequestBody req: String): Transaction {
+    fun postPaymentSale(@RequestBody req: String) {
         val request: Transaction = objectMapper.readValue(req)
-        return paymentService.postPayment(request)
+        paymentService.postPayment(request)
     }
 }

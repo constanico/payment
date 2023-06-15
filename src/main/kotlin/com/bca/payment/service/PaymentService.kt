@@ -5,5 +5,5 @@ import com.bca.payment.model.TransactionList
 
 interface PaymentService {
     fun getPayment(): TransactionList
-    fun postPayment(transaction: Transaction): Transaction
+    fun postPayment(transaction: Transaction)
 }

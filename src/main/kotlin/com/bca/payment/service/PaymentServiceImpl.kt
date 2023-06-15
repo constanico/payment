@@ -12,9 +12,9 @@ class PaymentServiceImpl(): PaymentService {
         return transactionList
     }
 
-    override fun postPayment(transaction: Transaction): Transaction {
-        transactionList.transactions.add(Transaction(transaction.txId, transaction.amount, transaction.status))
-        return transaction
+    override fun postPayment(transaction: Transaction) {
+        val status = arrayOf("SUCCESS", "FAILED")
+        val randomStatus = status.random()
+        transactionList.transactions.add(Transaction(transaction.txId, transaction.amount, randomStatus))
     }
-
 }
