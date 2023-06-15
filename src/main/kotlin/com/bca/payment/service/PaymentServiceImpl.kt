@@ -5,7 +5,7 @@ import com.bca.payment.model.TransactionList
 import org.springframework.stereotype.Service
 
 @Service
-class PaymentServiceImpl(): PaymentService {
+class PaymentServiceImpl: PaymentService {
     val transactionList = TransactionList()
 
     override fun getPayment(): TransactionList {
