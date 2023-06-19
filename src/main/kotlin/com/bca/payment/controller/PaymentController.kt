@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping(value = ["/payment/"])
 class PaymentController(private val paymentService: PaymentService) {
 
-    @Autowired
-    lateinit var objectMapper: ObjectMapper
-
     @CrossOrigin
     @GetMapping("/sale")
     fun getPaymentSale(): TransactionList {
@@ -28,8 +25,7 @@ class PaymentController(private val paymentService: PaymentService) {
 
     @CrossOrigin
     @PostMapping("/sale")
-    fun postPaymentSale(@RequestBody req: String) {
-        val request: Transaction = objectMapper.readValue(req)
-        paymentService.postPayment(request)
+    fun postPaymentSale(@RequestBody req: Transaction) {
+        paymentService.postPayment(req)
     }
 }
